@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Title: Database_Migration
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: H264637
+Implementation-Vendor-Id: com.honeywell
+Build-Jdk: 1.8.0_161
+Created-By: Maven Integration for Eclipse
+

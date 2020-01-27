@@ -1,0 +1,133 @@
+Utility Migration Tool
+
+THE USER_INTERFACE OF DATA_MIGRATION TOOL IS SUBDIVIDED IN FOLLOWING SUB-SECTIONS..
+1.Migration_Home Page
+
+This page is sub-divided into two sections as follows
+I.	 Migration section
+II.	 Pre -Migration Validation.
+III. Post Migration Validation.
+ 
+
+Section-I: MIGRATION SECTION 
+In this section, basically user will give the inputs for source and destination database and according to this details we are connecting to respective databases.
+The fields and its standard formats is as mentioned below
+
+i)Database
+ On both source and destination side, from dropdown select source and destination database. 
+ In this category, we have options like OARCLE, HSQLDB, SQL SERVER
+
+ii)URL
+ the url is generating at back end when user fill other input fields, this field is not editable 
+ some standard format for different database url’s are as follows
+• HSQLDB(Embeded) 	::  jdbc:hsqldb:file:<Path of db>
+• SQL SERVER  		::  jdbc:${database.type}://${database.host}:1433;databaseName=${database.name}
+• ORACLE 		::  jdbc:${database.type}:thin:@${database.host}:1521:${database.name}
+ 
+iii)Hostname, Port
+these fields used to construct connection url for database 
+
+Hostname 
+host for database 
+e.g.: Localhost
+Port
+default Port for Oracle DB 		:: 1521
+default Port for SQL-SERVER DB 	:: 1433
+default Port for HSQL DB 		:: 9101
+ 
+iv) UserId and Password
+this fields are pointing towards the user we are using for Connecting to particular database,
+the user should have sufficient privilege for that database is mandatory
+#Userid is a mandatory field.
+
+v)DB Name 
+this field will point towards database name 
+#this field is mandatory
+ 
+vi)DB Schema
+This field pointing toward the schema under your database which we are using for migration
+#this field is mandatory  
+HSQLDB
+ Public is the default schema for hsqldb 
+ We can create a new schema too and point your schema location to newly created schema
+SQL SERVER
+ dbo is the default schema for sql server
+ORACLE
+ the user we are created is consider as a schema name in oracle so we can use same here 
+
+We have some action buttons also in this section the buttons and the respective action which is triggered by that is as follows
+i) Test Connection 
+ According to input user provided in the input fields which described above the application try to connect with source/destination database.
+ if all fields are valid u will get connected to source database and will see a alert giving successful connection message.
+ if any of the fields given by user is not valid he will get a alert with respective error message. 
+
+ii) Reset to Default
+ this button is setting up all fields to its default values 
+
+iii) Migrate 
+•	this button starts migration from source to destination database as per mentioned source and destination details
+•	if your destination schema already has some data then application generate a pop up alert for user confirmation to delete currently existing data and generate new data 
+•	if user allows it will proceed to delete old and create new data otherwise it will terminate the migration
+•	please go through standard operating process section before triggering this action for accurate results 
+
+iv) Pre-Migration Validation.
+•	this section validates the current count of tables in source and destination.
+•	it will give us the current count of tables in source and destination
+•	After successful completion of this action we can proceed to the migration. 
+
+v) Post Migration Validation
+•	This button will trigger the second plane on same page 
+•	it will analyze all table names in source database and calculate the count of rows in each table and then it will check same table in destination database and calculate the rows its having for same table name. 
+•	it will plot these values in tabular format in UI so that user can analyze all tales with respective data in UI and check migration completed properly or not.
+
+Section-II: Validation Before Migration.
+•	This section present at left bottom of application (Below migration section).
+•	this section validates the presence of tables in source and destination.
+•	it will give us the current count of tables in source and destination.
+•	we can trigger this action before migration and after migration too 
+•	It is recommended to use this before migration to calculate source and destination tables 
+•	this section contains two text field accordingly for indication of source tables and destination tables 
+•	this action will be triggered by pre-migration validation button. 
+
+Section-III: Validation After Migration
+•	this section will automatically be triggered by post migration validation button. 
+•	this section present in right plane of page 
+•	this contains 2 text fields at top which told us the count of source and destination database tables so that we can compare the tables are migrated.
+
+ this plane contains a table having following columns and with respective data
+1.SR NO 				:: It will show tables numbers one by one 
+2.NAME  			:: This field will show the name of the table
+3.Count of source rows	 	:: This column gave count of rows in source for a particular table
+4.Count of destination rows 	:: This column gave count of rows in destination for a particular table
+
+•	Note :the validation is referenced from source so we can validate the data for tables which are in source with respect to destination but  if some additional tables are there in destination we are not considering them.
+
+2.Application Logs
+
+•	We have two log files for application 1st one will store the detailed logs (Mylogfile.log) which user can access from its local file directory (<Application location>/Mylogfile.log ) and in second log file (Log_Summary.log)  we just included the failed records if any and other higher level logs so user can access this file is accessible to from UI (Log tab) and local directory(<Application location>/ Log_Summary.log.).
+•	These logs are automatically refreshed once user restarted the application.
+•	This section contains two buttons logs and clear respectively and one text area which used to show high level logs of application. 
+•	logs button will retrieve logs from a specific file location and put it in scrollable text area so that we can see the process
+•	clear button will clear the window 
+•	we are also generating high level logs in a local file so user can choose any one of them to see logs either local file or application tab
+
+
+3.Help_Page
+• here user will get all application related information with Standard operating procedure
+
+
+Standard Operating Procedure
+
+1.Copy zip and extract in local file directory 
+ Zip contains: Migration tool and application_help.txt 
+2.Give input for source and destination as per mentioned in migration section
+3.test source connection    proceed to next section only when connection succeed.
+4.test destination connection    proceed to next section only when connection succeed.
+5.use button pre-migration validation to check currently how many tables are there in source and destination this button will also enable the migration button.
+6.Trigger migration and wait for alert which indicates successful migration from source to destination
+ meanwhile we can check logs from local file directory to monitor migration process 
+ proceed to next step once u get a success alert and once migration completed post migration button is enabled.
+7.Trigger the post migration validation button and validate the data in source and destination mentioned in right plane proceed once u are able to see the     respective data in UI Tables.
+8.Trigger reset to default to reset all fields to default
+
+					
