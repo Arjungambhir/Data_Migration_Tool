@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.ProgressIndicator?>
+
+
+<AnchorPane fx:id="sample" minHeight="0.0" minWidth="0.0" prefHeight="680.0" 
+            prefWidth="1360.0" xmlns="http://javafx.com/javafx/8" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.migration.controllers.Controller">
+   
+   <children>
+      <Separator layoutX="339.0" layoutY="60.0" orientation="VERTICAL" prefHeight="435.50" prefWidth="2.0" />
+	  <Separator layoutX="689.0" layoutY="5.0" orientation="VERTICAL" prefHeight="670.0" prefWidth="2.0" />
+	  <Separator layoutX="691.0" layoutY="5.0" orientation="VERTICAL" prefHeight="670.0" prefWidth="2.0" />
+	  <Separator layoutX="10.0" layoutY="495.0" orientation="HORIZONTAL" prefHeight="1.0" prefWidth="679.0" />
+	  <Separator layoutX="10.0" layoutY="565.0" orientation="HORIZONTAL" prefHeight="1.0" prefWidth="679.0" />
+	  <Separator layoutX="10.0" layoutY="635.0" orientation="HORIZONTAL" prefHeight="1.0" prefWidth="679.0" />
+	  <Separator layoutX="10.0" layoutY="638.0" orientation="HORIZONTAL" prefHeight="1.0" prefWidth="679.0" />
+	  
+	 
+	 <Button layoutX="15.0" layoutY="587.5" mnemonicParsing="false" onAction="#HomePage" prefHeight="25.0" prefWidth="145.0" text="Reset To Default" />
+	 <Button fx:id="migration" layoutX="177.0" layoutY="587.5" mnemonicParsing="false" onAction="#handleClick" prefHeight="25.0" prefWidth="145.0" text="Migrate" />
+	 <Button fx:id="validation" layoutX="515.0" layoutY="587.5" mnemonicParsing="false" onAction="#Translations" prefHeight="25.0" prefWidth="160.0" text="Post Migration Validation" />
+	 <Button fx:id="Prepare" layoutX="340.0" layoutY="587.5" mnemonicParsing="false" onAction="#ScemaStatus" prefHeight="25.0" prefWidth="160.0" text="Pre Migration Validation" />
+	 
+	 
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="260.0" layoutY="10.0" prefHeight="38.0" prefWidth="160.0" text="MIGRATION" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Arial " size="24.0" />
+	         </font>
+      </Label>
+     
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="850.0" layoutY="10.0" prefHeight="38.0" prefWidth="300.0" text="Post Migration Validation" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Arial " size="24.0" />
+	         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="56.0" prefHeight="25.0" prefWidth="91.0" text="Source" textAlignment="CENTER">
+         <font>
+            <Font name="Arial " size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="450.0" layoutY="56.0" prefHeight="29.0" prefWidth="147.0" text="Destination" textAlignment="CENTER">
+         <font>
+            <Font name="Arial " size="20.0" />
+         </font>
+      </Label>
+    
+
+	<GridPane alignment="CENTER" layoutX="1.0" layoutY="120.0" prefHeight="330.0" prefWidth="340.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="90.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="190.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        
+        </rowConstraints>
+		
+		
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="29.0" prefWidth="80.0" text="DATABASE : " />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="URL : " GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="Hostname : " GridPane.rowIndex="2" />
+             <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="Port : " GridPane.rowIndex="3" />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="UserID : " GridPane.rowIndex="4" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="29.0" prefWidth="80.0" text="Password : " GridPane.rowIndex="5" />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="DB Name : " GridPane.rowIndex="6" />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="DB Schema : " GridPane.rowIndex="7" />
+            
+            <TextField fx:id="url" id="url" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+              <TextField fx:id="Hostname1" id="Hostname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="Port1" id="Port" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="userid" id="userid" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <PasswordField fx:id="password" id="password" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="dbname" id="dbname" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="srcscema" id="srcscema" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+         
+            <ComboBox fx:id="driver" id="driver" prefWidth="130.0" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </ComboBox>
+         </children>
+      </GridPane>
+	  
+	  
+	  
+	  
+      <GridPane layoutX="341.0" layoutY="120.0" prefHeight="330.0" prefWidth="340.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="29.0" prefWidth="80.0" text="DATABASE : " />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="URL : " GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="Hostname : " GridPane.rowIndex="2" />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="Port : " GridPane.rowIndex="3" />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="UserID : " GridPane.rowIndex="4" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="29.0" prefWidth="80.0" text="Password : " GridPane.rowIndex="5" />
+            <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="DB Name : " GridPane.rowIndex="6" />
+           <Label alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="80.0" text="DB Schema : " GridPane.rowIndex="7" />
+            
+              <TextField fx:id="Hostname" id="Hostname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="Port" id="Port" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="url1" id="url1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="userid1" id="userid1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <PasswordField fx:id="password1" id="password1" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="dbname1" id="dbname1" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+             <TextField fx:id="dstscema" id="dstscema" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+           
+            <ComboBox  id="driver1" fx:id="driver1" prefWidth="130.0" GridPane.columnIndex="1">
+           
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </ComboBox>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="90.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="190.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            
+              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        
+         </rowConstraints>
+      </GridPane>
+   <Button layoutX="70.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleClickSrcCon" prefHeight="25.0" prefWidth="200.0" text="Test Connection" />
+	
+	 
+	  <Button layoutX="410.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleClickdstCon" prefHeight="25.0" prefWidth="200.0" text="Test Connection" />
+	   
+	
+	  
+	 <Label alignment="CENTER_RIGHT" layoutX="700.0" layoutY="55.0" contentDisplay="RIGHT" prefHeight="40.0" prefWidth="150.0" text="Tables Count at Source:  " />
+     <TextField fx:id="SrcTables" id="SrcTables"  layoutX="853.0" layoutY="62.0" prefWidth="100.0"  />
+     <Label alignment="CENTER_RIGHT" layoutX="1050.0" layoutY="55.0"  prefHeight="40.0" prefWidth="170.0" text="Tables Count at Destination:  " />
+     <TextField fx:id="DstTables" id="DstTables" layoutX="1220.0" layoutY="62.0" prefWidth="100.0" />
+     
+     <Label alignment="CENTER_RIGHT" layoutX="5.0" layoutY="510.0" contentDisplay="RIGHT" prefHeight="40.0" prefWidth="150.0" text="Tables Count at Source:  " />
+     <TextField fx:id="SrcTables1" id="SrcTables1"  layoutX="157.0" layoutY="517.0" prefWidth="150.0"  />
+     <Label alignment="CENTER_RIGHT" layoutX="320.0" layoutY="510.0"  prefHeight="40.0" prefWidth="170.0" text="Tables Count at Destination:  " />
+     <TextField fx:id="DstTables1" id="DstTables1" layoutX="490.0" layoutY="517.0" prefWidth="150.0" />
+     
+   
+    <TableView fx:id="tableView" layoutX="700.0" layoutY="100.0" prefHeight="520.0" prefWidth="640.0">
+    </TableView>
+
+	<ProgressIndicator  fx:id="Indicator" visible="false" prefHeight="100.0" prefWidth="100.0"/>
+	
+    </children>
+    
+    
+    
+    
+   
+   
+   
+</AnchorPane>

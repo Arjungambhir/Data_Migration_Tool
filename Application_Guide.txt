@@ -1,6 +1,3 @@
-# Data_Migration_Tool
-
-
 Utility Migration Tool
 
 THE USER_INTERFACE OF DATA_MIGRATION TOOL IS SUBDIVIDED IN FOLLOWING SUB-SECTIONS..
@@ -22,10 +19,10 @@ i)Database
 
 ii)URL
  the url is generating at back end when user fill other input fields, this field is not editable 
- some standard format for different database urlï¿½s are as follows
-ï¿½ HSQLDB(Embeded) 	::  jdbc:hsqldb:file:<Path of db>
-ï¿½ SQL SERVER  		::  jdbc:${database.type}://${database.host}:1433;databaseName=${database.name}
-ï¿½ ORACLE 		::  jdbc:${database.type}:thin:@${database.host}:1521:${database.name}
+ some standard format for different database url’s are as follows
+• HSQLDB(Embeded) 	::  jdbc:hsqldb:file:<Path of db>
+• SQL SERVER  		::  jdbc:${database.type}://${database.host}:1433;databaseName=${database.name}
+• ORACLE 		::  jdbc:${database.type}:thin:@${database.host}:1521:${database.name}
  
 iii)Hostname, Port
 these fields used to construct connection url for database 
@@ -68,34 +65,34 @@ ii) Reset to Default
  this button is setting up all fields to its default values 
 
 iii) Migrate 
-ï¿½	this button starts migration from source to destination database as per mentioned source and destination details
-ï¿½	if your destination schema already has some data then application generate a pop up alert for user confirmation to delete currently existing data and generate new data 
-ï¿½	if user allows it will proceed to delete old and create new data otherwise it will terminate the migration
-ï¿½	please go through standard operating process section before triggering this action for accurate results 
+•	this button starts migration from source to destination database as per mentioned source and destination details
+•	if your destination schema already has some data then application generate a pop up alert for user confirmation to delete currently existing data and generate new data 
+•	if user allows it will proceed to delete old and create new data otherwise it will terminate the migration
+•	please go through standard operating process section before triggering this action for accurate results 
 
 iv) Pre-Migration Validation.
-ï¿½	this section validates the current count of tables in source and destination.
-ï¿½	it will give us the current count of tables in source and destination
-ï¿½	After successful completion of this action we can proceed to the migration. 
+•	this section validates the current count of tables in source and destination.
+•	it will give us the current count of tables in source and destination
+•	After successful completion of this action we can proceed to the migration. 
 
 v) Post Migration Validation
-ï¿½	This button will trigger the second plane on same page 
-ï¿½	it will analyze all table names in source database and calculate the count of rows in each table and then it will check same table in destination database and calculate the rows its having for same table name. 
-ï¿½	it will plot these values in tabular format in UI so that user can analyze all tales with respective data in UI and check migration completed properly or not.
+•	This button will trigger the second plane on same page 
+•	it will analyze all table names in source database and calculate the count of rows in each table and then it will check same table in destination database and calculate the rows its having for same table name. 
+•	it will plot these values in tabular format in UI so that user can analyze all tales with respective data in UI and check migration completed properly or not.
 
 Section-II: Validation Before Migration.
-ï¿½	This section present at left bottom of application (Below migration section).
-ï¿½	this section validates the presence of tables in source and destination.
-ï¿½	it will give us the current count of tables in source and destination.
-ï¿½	we can trigger this action before migration and after migration too 
-ï¿½	It is recommended to use this before migration to calculate source and destination tables 
-ï¿½	this section contains two text field accordingly for indication of source tables and destination tables 
-ï¿½	this action will be triggered by pre-migration validation button. 
+•	This section present at left bottom of application (Below migration section).
+•	this section validates the presence of tables in source and destination.
+•	it will give us the current count of tables in source and destination.
+•	we can trigger this action before migration and after migration too 
+•	It is recommended to use this before migration to calculate source and destination tables 
+•	this section contains two text field accordingly for indication of source tables and destination tables 
+•	this action will be triggered by pre-migration validation button. 
 
 Section-III: Validation After Migration
-ï¿½	this section will automatically be triggered by post migration validation button. 
-ï¿½	this section present in right plane of page 
-ï¿½	this contains 2 text fields at top which told us the count of source and destination database tables so that we can compare the tables are migrated.
+•	this section will automatically be triggered by post migration validation button. 
+•	this section present in right plane of page 
+•	this contains 2 text fields at top which told us the count of source and destination database tables so that we can compare the tables are migrated.
 
  this plane contains a table having following columns and with respective data
 1.SR NO 				:: It will show tables numbers one by one 
@@ -103,20 +100,20 @@ Section-III: Validation After Migration
 3.Count of source rows	 	:: This column gave count of rows in source for a particular table
 4.Count of destination rows 	:: This column gave count of rows in destination for a particular table
 
-ï¿½	Note :the validation is referenced from source so we can validate the data for tables which are in source with respect to destination but  if some additional tables are there in destination we are not considering them.
+•	Note :the validation is referenced from source so we can validate the data for tables which are in source with respect to destination but  if some additional tables are there in destination we are not considering them.
 
 2.Application Logs
 
-ï¿½	We have two log files for application 1st one will store the detailed logs (Mylogfile.log) which user can access from its local file directory (<Application location>/Mylogfile.log ) and in second log file (Log_Summary.log)  we just included the failed records if any and other higher level logs so user can access this file is accessible to from UI (Log tab) and local directory(<Application location>/ Log_Summary.log.).
-ï¿½	These logs are automatically refreshed once user restarted the application.
-ï¿½	This section contains two buttons logs and clear respectively and one text area which used to show high level logs of application. 
-ï¿½	logs button will retrieve logs from a specific file location and put it in scrollable text area so that we can see the process
-ï¿½	clear button will clear the window 
-ï¿½	we are also generating high level logs in a local file so user can choose any one of them to see logs either local file or application tab
+•	We have two log files for application 1st one will store the detailed logs (Mylogfile.log) which user can access from its local file directory (<Application location>/Mylogfile.log ) and in second log file (Log_Summary.log)  we just included the failed records if any and other higher level logs so user can access this file is accessible to from UI (Log tab) and local directory(<Application location>/ Log_Summary.log.).
+•	These logs are automatically refreshed once user restarted the application.
+•	This section contains two buttons logs and clear respectively and one text area which used to show high level logs of application. 
+•	logs button will retrieve logs from a specific file location and put it in scrollable text area so that we can see the process
+•	clear button will clear the window 
+•	we are also generating high level logs in a local file so user can choose any one of them to see logs either local file or application tab
 
 
 3.Help_Page
-ï¿½ here user will get all application related information with Standard operating procedure
+• here user will get all application related information with Standard operating procedure
 
 
 Standard Operating Procedure
